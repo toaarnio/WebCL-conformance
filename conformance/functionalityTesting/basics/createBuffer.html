@@ -117,15 +117,15 @@ try {
 
     // Creating sub-buffers on buffer of size of atleast 200, with different memory flags and randomly generated origin and sub-buffer size.
     buffer = wtu.createBuffer(webCLContext, webcl.MEM_READ_ONLY, getRandomTwoDigitNumber() + 200);
-    createAndVerifyBuffer("webcl.MEM_READ_ONLY", getRandomTwoDigitNumber(), getRandomTwoDigitNumber(), buffer);
+    createAndVerifyBuffer("webcl.MEM_READ_ONLY", getRandomTwoDigitNumber(), 0, buffer);
 
     buffer = wtu.createBuffer(webCLContext, webcl.MEM_WRITE_ONLY, getRandomTwoDigitNumber() + 200);
-    createAndVerifyBuffer("webcl.MEM_WRITE_ONLY", getRandomTwoDigitNumber(), getRandomTwoDigitNumber(), buffer);
+    createAndVerifyBuffer("webcl.MEM_WRITE_ONLY", getRandomTwoDigitNumber(), 0, buffer);
 
     buffer = wtu.createBuffer(webCLContext, webcl.MEM_READ_WRITE, getRandomTwoDigitNumber() + 200);
-    createAndVerifyBuffer("webcl.MEM_READ_ONLY", getRandomTwoDigitNumber(), getRandomTwoDigitNumber(), buffer);
-    createAndVerifyBuffer("webcl.MEM_WRITE_ONLY", getRandomTwoDigitNumber(), getRandomTwoDigitNumber(), buffer);
-    createAndVerifyBuffer("webcl.MEM_READ_WRITE", getRandomTwoDigitNumber(), getRandomTwoDigitNumber(), buffer);
+    createAndVerifyBuffer("webcl.MEM_READ_ONLY", getRandomTwoDigitNumber(), 0, buffer);
+    createAndVerifyBuffer("webcl.MEM_WRITE_ONLY", getRandomTwoDigitNumber(), 0, buffer);
+    createAndVerifyBuffer("webcl.MEM_READ_WRITE", getRandomTwoDigitNumber(), 0, buffer);
 
 } catch(e) {
     testFailed(e.description);
