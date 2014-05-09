@@ -531,11 +531,11 @@ function shouldThrowExceptionName(_a, _e)
     }
     if (exception instanceof WebCLException) {
         if (isStrict && exception.name != _e)
-            testFailed(_a + " should throw " + _e + ". Threw " + exception.name + ".");
+            testFailed(_a + " should throw " + _e + ". Threw " + exception.name + ": " + exception.message);
         else
-            testPassed(_a + " threw exception " + exception.name + ".");
+            testPassed(_a + " threw exception " + exception.name + ": " + exception.message);
     } else
-        testFailed(_a + " should throw " + _e + ". Threw " + exception.name + ".");
+        testFailed(_a + " should throw " + _e + ". Threw " + exception.name + ": " + exception.message);
 }
 
 function shouldBeArrayOfType(_a, _type, quite)
